@@ -2,11 +2,20 @@
 
 Simple demo app to test react component code sharing
 
+## Getting started
+
+```bash
+% git clone git@github.com:ecgreb/react-code-sharing.git
+% cd react-code-sharing
+% yarn install
+% yarn start
+```
+
 ## Structure
 
 Basic react app created using `npx create-react-app my-app --template typescript`. The app includes a simple button and a click counter.
 
-## Code Sharing
+## Code sharing
 
 Three custom "Header" components are added using various techniques for sharing data and code between components.
 
