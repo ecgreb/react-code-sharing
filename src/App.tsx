@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header1 from './components/Header1';
@@ -10,6 +10,18 @@ function App() {
   const increment = () => {
     setCount(count + 1);
   }
+  const ref = useRef(0);
+  const render = useMemo(() => {
+    return (count: number) => {
+      ref.current++;
+      console.log('Render Prop render count = ' + ref.current);
+      return (
+        <p>
+          Count = {count}
+        </p>
+      )
+    }
+  }, [count]);
 
   return (
     <div className="App">
@@ -19,13 +31,7 @@ function App() {
           Count = {count}
         </p>
       </Header2>
-      <Header3 count={count} render={(count) => {
-        return (
-          <p>
-            Count = {count}
-          </p>
-        )
-      }}/>
+      <Header3 count={count} render={render}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <p>
