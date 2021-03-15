@@ -19,7 +19,7 @@ function App() {
           Count = {count}
         </p>
       </Header2>
-      <Header3 render={() => {
+      <Header3 count={count} render={(count) => {
         return (
           <p>
             Count = {count}
